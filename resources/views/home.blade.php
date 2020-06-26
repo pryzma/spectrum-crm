@@ -14,7 +14,13 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    @foreach ($targets as $target)
+                        <li class="list-group-item list-group-item-action">
+                            <div id="target{{ $target->id }}" class="btn btn-danger btn-sm delete mr-3">
+                                <i class="fas fa-times"></i>
+                            </div>{{ $target->name }}<span style="display: inline-block; position: absolute; right: 20px;">{{ $target->subject }}</span>
+                        </li>
+                    @endforeach
                 </div>
             </div>
         </div>
